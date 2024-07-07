@@ -78,5 +78,5 @@ public String modify(@PathVariable Long id, @ModelAttribute Item item) {
 @PathVariable 을 통해 받은 id값을 직업 item 객체에 적용해주고 있지 않은데도 불구하고 itemRepository.save(item)이 정상적으로 동작하고 있는지 의문이 생겼다. 
 
 ---
-관련 의문에 대해서는 Spring 문서에서 
+관련 의문에 대해서는 Spring 문서에서 해소할 수 있었다. 
 
