@@ -73,5 +73,10 @@ public String modify(@PathVariable Long id, @ModelAttribute Item item) {
 
 이런 컨트롤러를 추가하였다. 
 
-여기서 문제로 여겼던 부분은 html에서 form을 제출할 때 id 값은 넘겨주고 있지 않음에도 불구하고, 제출받은 item이 db에서 수정할 데이터를 찾아서 수정한 부분이었다.
+여기서 문제로 여겼던 부분은 HTML 폼에서 id 값을 명시적으로 전송하고 있지 않음에도 불구하고, 컨트롤러에서 받은 item 객체에 id 값이 정상적으로 설정되어 있다는 부분이었다. 
+
+@PathVariable 을 통해 받은 id값을 직업 item 객체에 적용해주고 있지 않은데도 불구하고 itemRepository.save(item)이 정상적으로 동작하고 있는지 의문이 생겼다. 
+
+---
+관련 의문에 대해서는 Spring 문서에서 
 
