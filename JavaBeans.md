@@ -9,7 +9,61 @@ JavaBean의 특징은 다음과 같다.
 1. 모든 Properties는 private 속성을 가진다.
 2. 기본 생성자를 지녀야 한다. 
 3. Serializable을 implement 해야한다. 
-4. Event Handling (이벤트 핸들링)
+
+## 모든 Properties는 private 속성을 가진다.
+
+JavaBean의 properties는 
+
+## 기본 생성자를 지녀야 한다. 
+
+## Serializable을 implement 해야한다. 
+
+JavaBean에 해당하는 클래스를 예시로 들자면 다음과 같다
+
+```java
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private static final long serialVersionUID = 1L;  // 직렬화에 사용되는 버전 관리 UID
+    
+    private String name;  // 이름 속성
+    private int age;      // 나이 속성
+
+    // 기본 생성자
+    public Person() {
+    }
+
+    // 매개변수가 있는 생성자 - 이름과 나이를 초기화합니다.
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 이름에 대한 게터 메서드
+    public String getName() {
+        return name;
+    }
+
+    // 이름에 대한 세터 메서드
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // 나이에 대한 게터 메서드
+    public int getAge() {
+        return age;
+    }
+
+    // 나이에 대한 세터 메서드
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+모든 속성은 기본적으로 private
+
+
 
 ## Property Accessor Methods
 
