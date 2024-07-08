@@ -12,7 +12,7 @@ JavaBean의 특징은 다음과 같다.
 
 ## 모든 Properties는 private 속성을 가진다.
 
-JavaBean의 properties는 
+JavaBean의 properties는 보통 private 접근 제한자를 통해 클래스 외부에서 직접 접근할 수 없도록 처리한다. 
 
 ## 기본 생성자를 지녀야 한다. 
 
