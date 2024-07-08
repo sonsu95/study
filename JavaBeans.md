@@ -1,4 +1,21 @@
 
+
+# JavaBean 이란?
+
+JavaBean은 Java에서 지정한 클래스 작성 방식을 따른 클래스의 형태를 의미한다. 
+
+# 주요 특징
+
+## 직렬화 기능(Serializable Interface)
+
+## 기본 생성자(Default Constructor)
+
+## 프로퍼티 접근 메서드(Property Accessor Methods)
+
+## 이벤트 처리(Event Handling)
+
+
+
 # JavaBeans Conventions
 
 ## What is JavaBean?
