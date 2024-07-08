@@ -1,4 +1,19 @@
 
+Spring에서 Data Binding에 대한 개념을 찾아보던 도중 공식 문서에서 Data Binding이 JavaBeans 규칙을 따른다는 내용을 발견했다. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
 # JavaBeans Conventions
 
 ## What is JavaBean?
