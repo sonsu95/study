@@ -10,6 +10,8 @@ JavaBeans라는 개념은 무엇인가?
 
 일부에서는 reusable software component model (재사용 가능한 소프트웨어 모델) 이라는 표현으로 JavaBeans를 표현하기도 한다. 
 
+다만 유의해야할 점은 JavaBeans는 일반적인 개념으로 이해되기에 구현체는 실제 개념과는 상이할 수도 있다는 점이다. 
+
 JavaBeans 규칙은 여러가지로 나뉘는데 우선 기본적으로는 
 1. 모든 속성은 private으로 처리되어야 한다
 2. 기본 생성자가 존재하여야 한다
