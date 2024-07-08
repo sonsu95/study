@@ -1,5 +1,5 @@
 
-# Spring MVC Data Binding
+# Data Binding
 
 클라이언트에서 보낸 데이터를 서버 측의 자바 객체에 자동으로 매핑하는 과정을 
 
