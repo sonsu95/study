@@ -148,6 +148,50 @@ Hamburger baconOnlyBurger = new Hamburger(2, 0, 0, 0, 0, 2, 0, 0);
 이런 상황을 피하기 위해 만들어진게 JavaBeans 패턴에서 기본 생성자를 요구하는 방식이라고 볼 수 있다. 
 
 해당 방식은 초기화 된 필드들을 지니는 인스턴스를 생성하고, 필요한 값들만 채우는 방식으로 객체를 생성한다. 
+```java
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class Hamburger {
+    private int buns;
+    private int patties;
+    private int lettuce;
+    private int tomato;
+    private int cheese;
+    private int bacon;
+    private int pickles;
+    private int onions;
+}
+
+// 모든 재료를 포함하는 햄버거
+Hamburger fullBurger = new Hamburger();
+fullBurger.setBuns(2);
+fullBurger.setPatties(1);
+fullBurger.setLettuce(2);
+fullBurger.setTomato(1);
+fullBurger.setCheese(1);
+fullBurger.setBacon(2);
+fullBurger.setPickles(3);
+fullBurger.setOnions(1);
+
+// 치즈버거
+Hamburger cheeseBurger = new Hamburger();
+cheeseBurger.setBuns(2);
+cheeseBurger.setPatties(1);
+cheeseBurger.setLettuce(2);
+cheeseBurger.setTomato(1);
+cheeseBurger.setCheese(1);
+
+// 베이컨만 있는 햄버거
+Hamburger baconOnlyBurger = new Hamburger();
+baconOnlyBurger.setBuns(2);
+baconOnlyBurger.setBacon(2);
+```
+
+
+
 
 ---
 
