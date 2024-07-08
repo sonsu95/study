@@ -3,7 +3,7 @@
 
 ## What is JavaBean?
 
-JavaBean은 Java 클래스를 어떻게 작성할지에 대한 표준을 이야기한다. 즉, Java에서 사용하는 클래스들 중에서, 표준 규격에 맞게 작성된 클래스를 JavaBean이라고 부르며, 일반적으로 IDE를 통해 작성되는 클래스들은 모두 이 규격에 맞춰서 작성되고 있다고 볼 수 있다. 
+JavaBean은 Java 클래스를 어떻게 작성할지에 대한 표준을 이야기한다. 즉, Java에서 사용하는 클래스들 중에서, 표준 규격에 맞게 작성된 클래스를 JavaBean이라고 부른다. 
 
 JavaBean의 특징은 다음과 같다. 
 1. 모든 Properties는 private 속성을 가진다.
@@ -12,7 +12,8 @@ JavaBean의 특징은 다음과 같다.
 
 ## 모든 Properties는 private 속성을 가진다.
 
-JavaBean의 properties는 보통 private 접근 제한자를 통해 클래스 외부에서 직접 접근할 수 없도록 처리한다. 
+JavaBean의 properties는 보통 private 접근 제한자를 통해 클래스 외부에서 직접 접근할 수 없도록 처리한다.
+따라서 public 접근이 가능한 getter나 setter를 별도로 설정해주어야 한다. 
 
 ## 기본 생성자를 지녀야 한다. 
 
