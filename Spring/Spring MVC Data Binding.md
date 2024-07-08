@@ -82,3 +82,18 @@ public String modify(@PathVariable Long id, @ModelAttribute Item item) {
 ---
 관련 의문에 대해서는 Spring 문서에서 해소할 수 있었다. 
 
+
+
+
+---
+
+### Reference
+
+#### Data Binding 관련 Spring 공식문서
+https://docs.spring.io/spring-framework/reference/core/validation/beans-beans.html
+
+#### @ModelAttribute 관련 Spring 공식문서
+https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/modelattrib-method-args.html
+
+#### DataBinder 클래스에 대한 JavaDoc
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/DataBinder.html
