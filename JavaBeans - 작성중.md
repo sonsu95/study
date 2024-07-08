@@ -1,8 +1,17 @@
 
-Spring에서 Data Binding에 대한 개념을 찾아보던 도중 공식 문서에서 Data Binding이 JavaBeans 규칙을 따른다는 내용을 발견했다. 
+Spring에서 Data Binding에 대한 개념을 찾아보던 도중 공식 문서에서 Data Binding이 JavaBeans 규칙을 따른다는 내용을 발견했다.  JavaBeans 규칙이 무엇인지, 그리고 Data Binding 개념이 왜 해당 규칙을 따르고 있다고 적혀있는 것인지 이해하기 위해 해당 문서를 작성
 
 
+# What is JavaBeans?
 
+JavaBeans라는 개념은 무엇인가?
+
+사실 간단하게만 말하자면 Java에서 사용하는 클래스의 형식을 통일하기 위한 일종의 표준 규격을 말한다고 볼 수 있다. 
+
+규칙은 여러가지로 나뉘는데 우선 기본적으로는 
+1. 모든 속성은 private으로 처리되어야 한다
+2. 기본 생성자가 존재하여야 한다
+3. Serializable 인터페이스를 구현하여야 한다. 
 
 
 
