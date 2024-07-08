@@ -5,6 +5,8 @@
 
 JavaBean은 Java 언어에서 사용되는 소프트웨어 컴포넌트 모델로, 특정한 컨벤션을 준수하는 클래스를 통해 객체의 재사용성과 캡슐화를 증진시키는 디자인 패턴입니다.
 
+그냥 간단하게 말하자면 Java 클래스를 작성하는 방법에 대한 표준 규정에 대해 이야기하는 것이며, 해당 규정을 만족한 클래스를 JavaBean이라고 부릅니다. 
+
 ## Property Accessor Methods
 
 - JavaBean은 private 필드에 값을 설정하고 접근하기 위한 public accessor 메서드(getter와 setter)를 가져야 합니다. 이는 캡슐화 원칙을 준수합니다.
