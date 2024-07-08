@@ -1,40 +1,21 @@
 
-
-# JavaBean 이란?
-
-JavaBean은 Java에서 지정한 클래스 작성 방식을 따른 클래스의 형태를 의미한다. 
-
-# 주요 특징
-
-## 직렬화 기능(Serializable Interface)
-
-## 기본 생성자(Default Constructor)
-
-## 프로퍼티 접근 메서드(Property Accessor Methods)
-
-## 이벤트 처리(Event Handling)
-
-
-
 # JavaBeans Conventions
 
 ## What is JavaBean?
 
-JavaBean은 Java에서 클래스를 어떻게 작성할지에 대한 표준 규격을 의미한다. 
-JavaBean의 특징은 다음과 같다 
+JavaBean은 Java 클래스를 어떻게 작성할지에 대한 표준을 이야기한다. 즉, Java에서 사용하는 클래스들 중에서, 표준 규격에 맞게 작성된 클래스를 JavaBean이라고 부르며, 일반적으로 IDE를 통해 작성되는 클래스들은 모두 이 규격에 맞춰서 작성되고 있다고 볼 수 있다. 
 
-1. 
-
-
-JavaBean은 Java 언어에서 사용되는 소프트웨어 컴포넌트 모델로, 특정한 컨벤션을 준수하는 클래스를 통해 객체의 재사용성과 캡슐화를 증진시키는 디자인 패턴입니다.
-
-그냥 간단하게 말하자면 Java 클래스를 작성하는 방법에 대한 표준 규정에 대해 이야기하는 것이며, 해당 규정을 만족한 클래스를 JavaBean이라고 부릅니다. 
+JavaBean의 특징은 다음과 같다. 
+1. 모든 Properties는 private 속성을 가진다.
+2. 기본 생성자를 지녀야 한다. 
+3. Serializable을 implement 해야한다. 
+4. Event Handling (이벤트 핸들링)
 
 ## Property Accessor Methods
 
-- JavaBean은 private 필드에 값을 설정하고 접근하기 위한 public accessor 메서드(getter와 setter)를 가져야 합니다. 이는 캡슐화 원칙을 준수합니다.
-- 메서드 이름은 일반적으로 `get`이나 `set`으로 시작하며, 그 뒤에는 속성 이름의 첫 글자를 대문자로 시작하는 이름이 붙습니다.
-- Boolean 속성의 경우, `get` 대신 `is`를 사용할 수 있습니다.
+- JavaBean은 private 필드에 값을 설정하고 접근하기 위한 public accessor 메서드(getter와 setter)를 가져야 한다. 이는 캡슐화 원칙을 준수한다.
+- 메서드 이름은 일반적으로 `get`이나 `set`으로 시작하며, 그 뒤에는 속성 이름의 첫 글자를 대문자로 시작하는 이름이 붙는다.
+- Boolean 속성의 경우, `get` 대신 `is`를 사용할 수도 있다.
 
 ```java
 public class EncapsulatedStudent {
@@ -89,6 +70,36 @@ public class StudentWithDefaultConstructor {
 }
 ```
 
+
+## Event Handling
+
+- JavaBean은 bound 또는 constrained 속성을 지원할 수 있습니다. bound 속성은 값이 변경될 때 Observer 패턴을 사용하여 리스너에게 알립니다. constrained 속성은 제안된 변경이 부적절하다고 판단될 경우 그 변경을 거부할 수 있습니다.
+
+```java
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+public class StudentWithEvents {
+    private String name;
+    private PropertyChangeSupport support;
+
+    public StudentWithEvents() {
+        support = new PropertyChangeSupport(this);
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener pcl) {
+        support.addPropertyChangeListener(pcl);
+    }
+
+    public void setName(String name) {
+        String oldName = this.name;
+        this.name = name;
+        support.firePropertyChange("name", oldName, name);
+    }
+}
+```
+
+
 ## Introspection
 
 - 메서드에 대한 명명 규칙을 준수함으로써, Introspection(자체 검사)이 용이해집니다. 이는 Bean이 지원하는 속성, 이벤트, 메서드 등을 분석할 때 도움이 됩니다.
@@ -137,34 +148,6 @@ class Student {
 
     public void setAge(int age) {
         this.age = age;
-    }
-}
-```
-
-## Event Handling
-
-- JavaBean은 bound 또는 constrained 속성을 지원할 수 있습니다. bound 속성은 값이 변경될 때 Observer 패턴을 사용하여 리스너에게 알립니다. constrained 속성은 제안된 변경이 부적절하다고 판단될 경우 그 변경을 거부할 수 있습니다.
-
-```java
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-
-public class StudentWithEvents {
-    private String name;
-    private PropertyChangeSupport support;
-
-    public StudentWithEvents() {
-        support = new PropertyChangeSupport(this);
-    }
-
-    public void addPropertyChangeListener(PropertyChangeListener pcl) {
-        support.addPropertyChangeListener(pcl);
-    }
-
-    public void setName(String name) {
-        String oldName = this.name;
-        this.name = name;
-        support.firePropertyChange("name", oldName, name);
     }
 }
 ```
