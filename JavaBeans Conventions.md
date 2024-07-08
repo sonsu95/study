@@ -1,9 +1,9 @@
 
 # JavaBeans Conventions
 
-Spring MVC Data Binding 개념을 찾아보면서 본 내용.
+## What is JavaBean?
 
-JavaBeans는 Java의 디자인 패턴을 준수하여 여러 객체를 단일 객체로 캡슐화하는 클래스를 말합니다. JavaBean 규약은 객체를 재사용, 캡슐화, 자체 검사(introspection), 그리고 사용자 지정을 용이하게 하도록 설계된 일련의 프로그래밍 지침입니다.
+JavaBean은 Java 언어에서 사용되는 소프트웨어 컴포넌트 모델로, 특정한 컨벤션을 준수하는 클래스를 통해 객체의 재사용성과 캡슐화를 증진시키는 디자인 패턴입니다.
 
 ## Property Accessor Methods
 
@@ -46,10 +46,7 @@ public class SerializableStudent implements Serializable {
     private static final long serialVersionUID = 1L;
     private String name;
     private int age;
-
-    // Constructor, Getters and Setters are omitted for brevity
 }
-
 ```
 
 ## Default Constructor
@@ -62,10 +59,8 @@ public class StudentWithDefaultConstructor {
     private int age;
 
     public StudentWithDefaultConstructor() {
-        // Default constructor allows the class to be instantiated without any arguments.
+        
     }
-
-    // Getters and Setters are omitted for brevity
 }
 ```
 
@@ -146,7 +141,20 @@ public class StudentWithEvents {
         this.name = name;
         support.firePropertyChange("name", oldName, name);
     }
-
-    // Getter is omitted for brevity
 }
 ```
+
+
+---
+
+## Reference
+
+예시는 GPT4 기반으로 작성되었습니다. 
+
+https://www.codecademy.com/resources/docs/java/javabeans
+
+https://velog.io/@dion/what-is-javabeans-and-why-use-javabeans
+
+https://docs.oracle.com/cd/E19159-01/819-3669/bnais/index.html
+
+https://docstore.mik.ua/orelly/java-ent/jnut/ch06_02.htm
