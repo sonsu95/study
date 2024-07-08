@@ -145,6 +145,9 @@ Hamburger fullBurger = new Hamburger(2, 1, 2, 1, 1, 2, 3, 1);
 Hamburger baconOnlyBurger = new Hamburger(2, 0, 0, 0, 0, 2, 0, 0);
 ```
 
+이런 상황을 피하기 위해 만들어진게 JavaBeans 패턴에서 기본 생성자를 요구하는 방식이라고 볼 수 있다. 
+
+해당 방식은 초기화 된 필드들을 지니는 인스턴스를 생성하고, 필요한 값들만 채우는 방식으로 객체를 생성한다. 
 
 ---
 
