@@ -93,9 +93,57 @@ class UseConstructor {
 ```
 이런 방식을 의미한다. 
 
-해당 방식은 객체의 일관성은 보장되지만, 사용하는 방식이 너무 번거롭다. 
+해당 방식은 객체의 일관성은 보장되지만, 사용하는 방식이 너무 번거롭다는 단점이 있다. 
 
-매개변수로 전달하다보니 전달해야하는 매개변수의 위치를 매번 기억해야하고, 매개변수의 특성상 순서도 따라야하다보니 전달되면 안되는 매개변수의 경우에는 직접 초기화 용도의 매개변수도 지정해주어야 했다. 
+매개변수가 많아지면, 각 매개변수가 어떤 역할을 하는 매개변수인지 외우고 있어야하며, 매개변수 순서상 사용하지 않는 매개변수의 경우에는 직접 초기화 용도의 변수를 넣어줘야하거나 그에 맞는 생성자를 새로 생성해줘야하는 상황이 발생한다. 
+
+```java
+public class Hamburger {
+    private int buns;
+    private int patties;
+    private int lettuce;
+    private int tomato;
+    private int cheese;
+    private int bacon;
+    private int pickles;
+    private int onions;
+
+    // 모든 재료를 포함하는 생성자
+    public Hamburger(int buns, int patties, int lettuce, int tomato, int cheese, int bacon, int pickles, int onions) {
+        this.buns = buns;
+        this.patties = patties;
+        this.lettuce = lettuce;
+        this.tomato = tomato;
+        this.cheese = cheese;
+        this.bacon = bacon;
+        this.pickles = pickles;
+        this.onions = onions;
+    }
+
+    // 치즈버거를 위한 생성자
+    public Hamburger(int buns, int patties, int lettuce, int tomato, int cheese) {
+        this(buns, patties, lettuce, tomato, cheese, 0, 0, 0);
+    }
+
+    // 베이컨 치즈버거를 위한 생성자
+    public Hamburger(int buns, int patties, int lettuce, int tomato, int cheese, int bacon) {
+        this(buns, patties, lettuce, tomato, cheese, bacon, 0, 0);
+    }
+
+    // 빵과 베이컨만 있는 햄버거를 위한 생성자
+    public Hamburger(int buns, int bacon) {
+        this(buns, 0, 0, 0, 0, bacon, 0, 0);
+    }
+    
+    // => 생성자 오버로딩 증가
+}
+
+// 매개변수가 많은 경우
+Hamburger fullBurger = new Hamburger(2, 1, 2, 1, 1, 2, 3, 1);
+
+// 선택적 매개변수 처리가 곤란한 경우
+Hamburger baconOnlyBurger = new Hamburger(2, 0, 0, 0, 0, 2, 0, 0);
+```
 
 
 ---
