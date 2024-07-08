@@ -15,7 +15,11 @@ JavaBeans라는 개념은 무엇인가?
 
 
 
+---
 
+# Reference 
+
+ [What is a JavaBean exactly?](https://stackoverflow.com/questions/3295496/what-is-a-javabean-exactly)
 
 
 
