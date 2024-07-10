@@ -1,5 +1,6 @@
 롬복에서 지원하는 builder 어노테이션은 심플 빌더 패턴을 따른다. 
-Intellij를 통해 
+
+기본 사용법은 다음과 같다. 
 
 ```java
 import lombok.Builder;  
@@ -17,6 +18,7 @@ public class Hamburger {
 }
 ```
 
+해당 코드에서 어노테이션을 벗겨보면 다음과 같은 상태가 된다. 
 
 ```java  
 public class Hamburger {  
@@ -107,3 +109,5 @@ public class Hamburger {
     }  
 }
 ```
+
+toString이 기본적으로 포함되어져 있으며, 심플 빌더 패턴에서처럼 정적 내부 클래스를 사용하고 있는 것을 알 수 있다. 
