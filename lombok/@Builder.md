@@ -1,3 +1,6 @@
+롬복에서 지원하는 builder 어노테이션은 심플 빌더 패턴을 따른다. 
+Intellij를 통해 
+
 ```java
 import lombok.Builder;  
   
