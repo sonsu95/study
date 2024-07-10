@@ -1,3 +1,19 @@
+```java
+import lombok.Builder;  
+  
+@Builder  
+public class Hamburger {  
+    private int buns;  
+    private int patties;  
+    private int lettuce;  
+    private int tomato;  
+    private int cheese;  
+    private int bacon;  
+    private int pickles;  
+    private int onions;  
+}
+```
+
 
 ```java  
 public class Hamburger {  
