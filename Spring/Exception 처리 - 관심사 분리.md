@@ -158,3 +158,5 @@ public User signupUser(User user) {
     "message": "필수 필드가 누락되었습니다."
 }
 ```
+
+이러한 방식의 장단점은 다음과 같다. 
