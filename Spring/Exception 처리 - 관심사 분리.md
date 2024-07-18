@@ -167,6 +167,13 @@ public User signupUser(User user) {
 - 유연성
 - 코드 재사용
 - 명확한 에러 핸들링
+- 다국어처리시 문구 고정 가능. 사용하는 입장에서 문구를 신경쓸 필요 없음. 
 ### 단점
 - 관리 부담
 - 복잡한 구조
+- 익셉션 종류가 많아짐
+
+---
+
+### Reference
+https://starting-coding.tistory.com/m/660
