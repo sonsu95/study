@@ -1,9 +1,4 @@
-
-
-
-
 ## Introduction
-
 
 ### 기본 동작 방식
 ```java
@@ -27,6 +22,21 @@ public class HelloWorld1 {
 
 ## Architecture
 
+logback은 크게 3가지 모듈로 구성된다. logback-core, logback-classic, logback-access.
+logback-core은 기본적인 로깅 기능을 제공하며, 다른 두 모듈의 코어 모듈로서 기능한다. 그 자체로 사용할 수는 없다. 
+logback-classic는 log4j를 개선한 버전으로, Java에서 로깅처리를 위한 표준 인터페이스를 제공한다. 
+logback-access는 서블릿 컨테이너와 통합하여 HTTP를 통한 접근 로그 기능을 제공한다. 
+
+로그백 클래스는 크게 Logger와 Appender, Layout으로 구성되며 
+
+
+
+
+
+
+
+
+---
 ### 로그백의 구조 및 주요 클래스
 
 1. Logger
