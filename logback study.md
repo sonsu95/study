@@ -22,17 +22,21 @@ public class HelloWorld1 {
 
 ## Architecture
 
-logback은 크게 3가지 모듈로 구성된다. logback-core, logback-classic, logback-access.
-logback-core은 기본적인 로깅 기능을 제공하며, 다른 두 모듈의 코어 모듈로서 기능한다. 그 자체로 사용할 수는 없다. 
-logback-classic는 log4j를 개선한 버전으로, Java에서 로깅처리를 위한 표준 인터페이스를 제공한다. 
-logback-access는 서블릿 컨테이너와 통합하여 HTTP를 통한 접근 로그 기능을 제공한다. 
+**logback**은 크게 3가지 모듈로 구성된다. logback-core, logback-classic, logback-access.
 
-로그백 클래스는 크게 Logger와 Appender, Layout으로 구성되며 
+`logback-core`은 기본적인 로깅 기능을 제공하며, 다른 두 모듈의 코어 모듈로서 기능한다. 그 자체로 사용할 수는 없다. 
+`logback-classic`는 log4j를 개선한 버전으로, Java에서 로깅처리를 위한 표준 인터페이스를 제공한다. 
+`logback-access`는 서블릿 컨테이너와 통합하여 HTTP를 통한 접근 로그 기능을 제공한다. 
+
+**로그백 클래스**는 크게 Logger와 Appender, Layout으로 구성된다.
+
+`Logger`는 로그를 생성하는 주체로 취급되며, 여러가지 로그 레벨(TRACE, DEBUG, INFO, WARN, ERROR)을 가질 수 있다. 로그 레벨에 따라 출력 제어가 가능하다. 
+`Appender`는 로그가 출력될 대상을 정의한다. 예를 들어 콘솔, 파일, 데이터베이스 등 다양한 출력 대상에 대한 지정이 가능하다. 
+`Layout`은 로그 메시지의 최종 출력 형식을 정의한다. 예를들어, 로그 이벤트의 시간, 로그 이름, 메시지 등을 포함한 특정 형식을 지정하는 것이 가능하다. 
 
 
-
-
-
+로깅 레벨의 상속
+- 로거에 레벨이 지정되어 있지 않은 경우 상위 로거의 레벨을 상속받는다. 
 
 
 
