@@ -27,7 +27,12 @@ public class HelloWorld1 {
 
 Logger, Appender, Layout 인터페이스
 
-Logger 
+Logger 클래스는 logback-classic 모듈의 일부
+Appender, Layout 클래스틑 logback-core 모듈의 일부
+
+logback-core 모듈의 경우 logger이라는 개념을 가지고 있지 않는다.
+
+logger는 이름이 붙여진 엔티티로 볼 수 있는데, 이는 대소문자를 구분하여 계층적인 명명 규칙을 따른다. 
 
 
 ## Architecture
