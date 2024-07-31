@@ -38,7 +38,19 @@ public class HelloWorld1 {
 로깅 레벨의 상속
 - 로거에 레벨이 지정되어 있지 않은 경우 상위 로거의 레벨을 상속받는다. 
 
+```java
+// 로거 인스턴스 생성
+Logger logger = LoggerFactory.getLogger("com.example.MyClass");
 
+// 로거 레벨 설정
+logger.setLevel(Level.INFO);
+
+// 로깅 메시지 출력
+logger.info("정보 로그 메시지");
+logger.debug("디버그 메시지는 출력되지 않음");  // INFO 레벨보다 낮기 때문에 출력되지 않습니다.
+```
+
+위 방식처럼 logger를 INFO 레벨로 설정해둔 경우, INFO레벨보다 낮은 경우는 실제 로그로 남지 않는다. 
 
 ---
 ### 로그백의 구조 및 주요 클래스
