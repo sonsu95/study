@@ -1,15 +1,41 @@
 
-
-## 개요
 Logback은 추상화 모듈로서, 단독으로서는 사용이 불가능한 SLF4J 모듈의 구현체이다. 
 
+https://www.slf4j.org/manual.html 해당 페이지에서 
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class HelloWorld {
+
+  public static void main(String[] args) {
+    Logger logger = LoggerFactory.getLogger(HelloWorld.class);
+    logger.info("Hello World");
+  }
+}
+```
+
+이런 예시코드를 두고 실행시키고 있다. 
+
+그런데 해당 코드를 실행시키면 
+
+```terminal
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+```
+
+이런 에러가 발생한다고 이야기한다. 
+
+해당 에러가 발생하는 원인에 대해  `no slf4j provider (or binding) could be found on your class path.` 이렇게 설명한다. 
+
+즉, slf4j는 단독으로 실행시킬 수 없는 인터페이스이고, 별도의 구현체가 필요하다는 소리인데 
+
+그러면서 하는 소리가 `need to obtain slf4j artifacts` 인데, 이 말은 slf4j의 아티팩트, 즉 구현체가 필요하다는 말이다. 
 
 
 
-
-
-
-
+---
 
 Logback은 자바에서 사용되는 로깅 프레임워크로, Log4j의 단점을 개선하여 개발되었다. Logback은 성능이 우수하고, 유연하며, 설정이 용이하여 자바 애플리케이션에서 표준 로깅 인터페이스로 널리 사용되고 있다. 또한, SLF4J(Simple Logging Facade for Java)라는 로깅 파사드의 기본 구현체 중 하나로, 다양한 로깅 프레임워크와의 호환성을 제공한다. Logback은 Spring Framework의 기본 로깅 프레임워크로 사용될 만큼 스프링과의 통합이 잘 이루어져 있다.
 
