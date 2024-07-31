@@ -28,10 +28,14 @@ public class HelloWorld1 {
 ## Architecture
 
 1. Logger
-	- Logger는 로그백의 logback-classic 모듈에 포함되어 있음
+	- Logger는 logback-classic 모듈에 포함되어 있음
 	- 로거는 로거 이벤트를 생성하는 주체
 	- 로거는 이름을 가지며, 이름을 대소문자로 구분
-	- 로거 이름은 점(.)을 통해 계층적으로 구분. 예를 들어, com.foo는 com.foo.Bar의 부모 로거
+	- 로거 이름은 점(.)을 통해 계층적으로 구분. 예를 들어, `com.foo`는 `com.foo.Bar`의 부모 로거
 2. Appender
-	- 
+	- Appender는 logback-core 모듈의 일부
+	- Appender는 로그 이벤트를 적절한 목적지(파일, 콘솔, 네트워크 등)에 출력하는 역할을 실행
+	- 다양한 Appender를 조합하는 방식으로 로그 출력을 유연하게 관리 가능
 3. Layout
+	- Layout은 logback-core 모듈의 일부
+	- 로그 메세지의 최종 출력 형식을 결정. 예를 들면, 로그 이벤트의 시간, 로거 이름, 메시지 등을 포함한 특정 형식을 설정 가능.
