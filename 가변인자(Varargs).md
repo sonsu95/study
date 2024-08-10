@@ -1,20 +1,40 @@
+
+
 ```java
-public List<Member> createMembers(String... names) {  
-  return Stream.of(names)  
-      .map(this::createMember)  
-      .collect(Collectors.toList());  
+public List createMembers(String... names) {  
+    return Stream.of(names)  
+        .map(this::createMember)  
+        .collect(Collectors.toList());  
 }
 ```
 
-위 방식처럼 String... 으로 처리되는걸 가변인자라고 한다. 
-가변인자는 정확히 말해 `여러개의 문자열을 받는다` 라는 의미로 이해할 수 있다. 
+## 개요
+- 위 방식처럼 `String...`으로 처리되는 것을 가변 인자(Varargs)라고 한다.
+- 가변 인자는 "0개 이상의 문자열을 받을 수 있다"는 의미로 이해할 수 있다.
+  - "여러 개"뿐만 아니라 "아무 것도 없는 경우"도 포함한다.
 
-String[] 배열과 String... 는 거의 동일하게 처리되지만 
+## String[]과의 차이점
+1. 컴파일러 처리:
+   - 가변 인자(`String...`)는 런타임 환경에서 컴파일러가 자동으로 배열로 변환한다.
+   - `String[]`은 처음부터 배열로 정의된다.
 
-가변인자방식은 런타임 환경에서 컴파일러가 배열로 변화시키고, String[] 은 애초부터 배열이라는 차이가 있다. 
-또한 `여러개의 문자열을 받는다`라는 의미처럼, 가변인자 방식으로 처리할 경우 null에 대한 처리가 안된다. 
-즉, null이 들어올 가능성을 배제한 배열 형태로 이해해도 좋다. 
+2. 메서드 호출 방식:
+   - 가변 인자: `createMembers("a", "b", "c")` 또는 `createMembers()`와 같이 호출 가능
+   - 배열: `createMembers(new String[]{"a", "b", "c"})` 형태로 호출해야 함
 
-String... 을 사용하면 인자가 없을때는 자동으로 빈배열로 처리된다. 
-String[]을 사용하는 경우에는 null을 전달할 수 있어서 NullPointException 에러의 가능성이 존재 
+3. null 처리:
+   - 가변 인자: null을 직접 전달할 수 없으며, 전달 시 컴파일러 경고와 런타임 예외 발생
+   - 배열: null을 전달할 수 있어 NullPointerException 발생 가능성 있음
 
+4. 빈 입력 처리:
+   - 가변 인자: 인자가 없을 때 자동으로 빈 배열로 처리됨
+   - 배열: 빈 배열을 명시적으로 전달해야 함 (예: `new String[0]`)
+
+## 주의사항
+- 가변 인자는 메서드의 마지막 매개변수로만 사용 가능
+- 하나의 메서드에는 하나의 가변 인자만 사용 가능
+
+## 사용 이점
+- 메서드 오버로딩을 줄일 수 있다.
+- 호출 시 더 유연하고 직관적인 문법을 제공.
+- null 처리에 대한 안전성을 높일 수 있음.
