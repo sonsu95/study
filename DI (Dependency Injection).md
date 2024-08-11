@@ -9,7 +9,9 @@ Dependency Injection(이하 DI)는 의존성 역전을 이야기한다.
 MemberRepository가 존재하는 상황을 가정하자. 
 MemberService 에서 하나의 MemberRepository의 인스턴스를 생성하였다. 
 
-그리고 테스트를 위한 MemberServiceTest 에서 다시 다른 MemberRepository의 인스턴스를 생성하여 
+그리고 테스트를 위한 MemberServiceTest 에서 다시 다른 MemberRepository의 인스턴스를 생성하여 테스트를 실행하고 있다고 보자. 
+
+위 경우 결과적으로 MemberRepository의 인스턴스는 두개가 되어 각각 따로 실행된다. 즉, 레포지토리가 두개가 된다. 
 
 ```java
 ```
